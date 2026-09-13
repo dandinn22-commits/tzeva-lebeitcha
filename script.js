@@ -148,6 +148,9 @@ document.addEventListener('DOMContentLoaded', () => {
         phone: getField('phone'),
         area: getField('area'),
         message: getField('message'),
+        _subject: 'ליד חדש מהאתר - צבע ביתך',
+        _template: 'table',
+        _captcha: 'false',
       };
 
       if (status) {
@@ -160,14 +163,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        const res = await fetch('/api/contact', {
+        // הפניות מהטפסים נשלחות למייל דרך FormSubmit.co (אין צורך בשרת משלנו)
+        const res = await fetch('https://formsubmit.co/ajax/tzevabaith@gmail.com', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(data),
         });
         const result = await res.json();
 
-        if (res.ok && result.ok) {
+        if (res.ok && (result.success === 'true' || result.success === true)) {
           if (status) {
             status.textContent = 'הפנייה נשלחה בהצלחה! מעבירים אתכם לעמוד תודה...';
             status.className = 'form-status success';
@@ -177,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
           window.location.href = 'thank-you.html';
           return;
         } else if (status) {
-          status.textContent = (result && result.error) || 'משהו השתבש, נסו שוב.';
+          status.textContent = (result && result.message) || 'משהו השתבש, נסו שוב.';
           status.className = 'form-status error';
         }
       } catch (err) {
