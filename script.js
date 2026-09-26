@@ -49,6 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { root: track, threshold: [0.6] });
     cards.forEach((card) => observer.observe(card));
 
+    // בנייד: פותחים על הביקורת השנייה כדי שיראו 3 כרטיסים (אחד במרכז ושניים בצדדים)
+    if (window.matchMedia('(max-width: 699px)').matches && cards.length > 2) {
+      requestAnimationFrame(() => {
+        const t = track.getBoundingClientRect();
+        const c = cards[1].getBoundingClientRect();
+        const delta = (c.left + c.width / 2) - (t.left + t.width / 2);
+        track.scrollBy({ left: delta, behavior: 'instant' });
+      });
+    }
+
     if (prevBtn) {
       prevBtn.addEventListener('click', () => {
         const target = cards[Math.max(activeIndex - 1, 0)];
