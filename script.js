@@ -187,8 +187,18 @@ document.addEventListener('DOMContentLoaded', () => {
             status.className = 'form-status success';
           }
           form.reset();
-          // מעבר לעמוד תודה אחרי שליחה מוצלחת
-          window.location.href = '/thank-you.html';
+          // דיווח ליד לאנליטיקס ואז מעבר לעמוד תודה (עם גיבוי אם הדיווח לא חוזר)
+          let moved = false;
+          const goThanks = () => { if (!moved) { moved = true; window.location.href = '/thank-you.html'; } };
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              form_location: form.classList.contains('quick-form') ? 'quick_form' : 'contact_form',
+              area: data.area || '',
+              page_path: location.pathname,
+              event_callback: goThanks,
+            });
+          }
+          setTimeout(goThanks, 1200);
           return;
         } else if (status) {
           status.textContent = (result && result.message) || 'משהו השתבש, נסו שוב.';
@@ -206,5 +216,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
+  });
+
+  // מעקב לחיצות וואטסאפ וטלפון (לאנליטיקס, כדי לייבא כהמרות לגוגל אדס)
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link || typeof gtag !== 'function' || location.pathname.includes('thank-you')) return;
+    const href = link.getAttribute('href');
+    const where = link.closest('header, .hero, .contact, .city-cta, .floating-buttons, footer, .notfound');
+    const params = { link_location: where ? (where.className.split(' ')[0] || where.tagName.toLowerCase()) : 'other', page_path: location.pathname };
+    if (href.includes('wa.me')) gtag('event', 'whatsapp_click', params);
+    else if (href.startsWith('tel:')) gtag('event', 'phone_click', params);
   });
 });

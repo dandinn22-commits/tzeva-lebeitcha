@@ -652,3 +652,32 @@ body.access-underline-links a { text-decoration: underline !important; }
 .city-links { font-size: 0.95rem; line-height: 2; }
 .city-links a { color: var(--yellow); }
 .about p + p { margin-top: 14px; }
+
+/* ===== שיפורי ניגודיות ונגישות ===== */
+.btn-primary { background: #D2400C; }
+.btn-whatsapp, .float-whatsapp { background: #0E7C5A; }
+.btn-call { background: #0B7F7F; }
+.btn-call:hover { background: #096868; }
+.hero-ctas .btn-call { color: #C21E56; }
+.review-name { color: #C21E56; }
+.site-header .logo span { color: #D2400C; }
+.site-footer a { text-decoration: underline; }
+.carousel-dots { gap: 2px; }
+.carousel-dots .dot,
+.reviews .carousel-dots .dot {
+  width: 24px; height: 24px; border-radius: 0; background: transparent;
+  display: inline-grid; place-items: center;
+}
+.carousel-dots .dot::after {
+  content: ''; width: 10px; height: 10px; border-radius: 5px; background: #ccc;
+  transition: width 0.2s ease;
+}
+.carousel-dots .dot.active,
+.reviews .carousel-dots .dot.active { background: transparent; width: 30px; }
+.carousel-dots .dot.active::after { background: #D2400C; width: 22px; }
+
+/* ===== דף שגיאה ===== */
+.notfound { text-align: center; padding: 90px 0; }
+.notfound h1 { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 12px; }
+.notfound p { color: #555; margin-bottom: 26px; }
+.notfound .hero-ctas { margin-bottom: 30px; }
