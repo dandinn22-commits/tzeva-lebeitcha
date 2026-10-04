@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           form.reset();
           // מעבר לעמוד תודה אחרי שליחה מוצלחת
-          window.location.href = 'thank-you.html';
+          window.location.href = '/thank-you.html';
           return;
         } else if (status) {
           status.textContent = (result && result.message) || 'משהו השתבש, נסו שוב.';
