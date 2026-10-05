@@ -138,6 +138,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // גיבוי לידים ולחיצות לגיליון "צבע ביתך – מעקב לידים" (אם הכתובת ריקה – לא בשימוש)
+  const SHEET_URL = '';
+  const sendToSheet = (payload) => {
+    if (!SHEET_URL) return;
+    try {
+      const body = new URLSearchParams(payload);
+      if (navigator.sendBeacon) navigator.sendBeacon(SHEET_URL, body);
+      else fetch(SHEET_URL, { method: 'POST', mode: 'no-cors', keepalive: true, body });
+    } catch (err) {}
+  };
+
   // טיפול בשליחת טפסי יצירת קשר (הטופס הראשי + טופס ההצעה המהירה)
   // עובד על כל טופס עם class="lead-form" - כל אחד עם שדות, כפתור ושורת סטטוס משלו
   document.querySelectorAll('.lead-form').forEach((form) => {
@@ -171,6 +182,16 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = true;
         submitBtn.textContent = 'שולח...';
       }
+
+      // נרשם בגיליון גם אם השליחה למייל תיכשל
+      sendToSheet({
+        name: data.name,
+        phone: data.phone,
+        area: data.area,
+        message: data.message,
+        source: form.classList.contains('quick-form') ? 'טופס מהיר' : 'טופס יצירת קשר',
+        page: location.pathname,
+      });
 
       try {
         // הפניות מהטפסים נשלחות למייל דרך FormSubmit.co (אין צורך בשרת משלנו)
@@ -221,8 +242,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // מעקב לחיצות וואטסאפ וטלפון (לאנליטיקס, כדי לייבא כהמרות לגוגל אדס)
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[href]');
-    if (!link || typeof gtag !== 'function' || location.pathname.includes('thank-you')) return;
+    if (!link || location.pathname.includes('thank-you')) return;
     const href = link.getAttribute('href');
+    if (href.includes('wa.me')) sendToSheet({ type: 'click', kind: 'whatsapp', page: location.pathname });
+    else if (href.startsWith('tel:')) sendToSheet({ type: 'click', kind: 'call', page: location.pathname });
+    if (typeof gtag !== 'function') return;
     const where = link.closest('header, .hero, .contact, .city-cta, .floating-buttons, footer, .notfound');
     const params = { link_location: where ? (where.className.split(' ')[0] || where.tagName.toLowerCase()) : 'other', page_path: location.pathname };
     if (href.includes('wa.me')) gtag('event', 'whatsapp_click', params);
