@@ -45,8 +45,9 @@ function gtag_report_conversion(url) {
 <meta property="og:image:alt" content="חדר שינה לפני ואחרי צביעה - צבע ביתך">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FF6B35">
-<link rel="apple-touch-icon" href="images/logo.png">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NCA0NCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjRjdDNTQ4Ii8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNGRjZCMzUiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNFNjM5NjkiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48Y2lyY2xlIGN4PSIyMiIgY3k9IjIyIiByPSIyMiIgZmlsbD0idXJsKCNnKSIvPjxwYXRoIGZpbGw9IiNmZmYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyLDkpIHNjYWxlKDAuODUpIiBkPSJNMTIgMmMtNS4zMyA0LjU1LTggOC40OC04IDExLjggMCA0Ljk4IDMuOCA4LjIgOCA4LjJzOC0zLjIyIDgtOC4yYzAtMy4zMi0yLjY3LTcuMjUtOC0xMS44eiIvPjwvc3ZnPg==">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon-48.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -173,20 +174,12 @@ function gtag_report_conversion(url) {
 <!-- ===== סרגל עליון ===== -->
 <header class="site-header">
   <div class="container header-inner">
-    <div class="logo">
-      <svg class="logo-icon" viewBox="0 0 44 44" width="38" height="38" aria-hidden="true">
-        <defs>
-          <linearGradient id="logoGradH" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#F7C548"/>
-            <stop offset="50%" stop-color="#FF6B35"/>
-            <stop offset="100%" stop-color="#E63969"/>
-          </linearGradient>
-        </defs>
-        <circle cx="22" cy="22" r="22" fill="url(#logoGradH)"/>
-        <path fill="#fff" transform="translate(12,9) scale(0.85)" d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>
-      </svg>
-      צבע <span>ביתך</span>
-    </div>
+    <a href="/" class="logo" aria-label="צבע ביתך - לדף הבית">
+      <picture>
+        <source srcset="/images/logo-header.webp" type="image/webp">
+        <img class="logo-img" src="/images/logo-header.png" alt="צבע ביתך - צביעת דירות ובתים" width="370" height="216">
+      </picture>
+    </a>
     <nav class="main-nav" id="mainNav">
       <a href="#services">שירותים</a>
       <a href="#gallery">לפני ואחרי</a>
@@ -485,18 +478,10 @@ function gtag_report_conversion(url) {
 <footer class="site-footer">
   <div class="container footer-inner">
     <div class="logo">
-      <svg class="logo-icon" viewBox="0 0 44 44" width="34" height="34" aria-hidden="true">
-        <defs>
-          <linearGradient id="logoGradF" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#F7C548"/>
-            <stop offset="50%" stop-color="#FF6B35"/>
-            <stop offset="100%" stop-color="#E63969"/>
-          </linearGradient>
-        </defs>
-        <circle cx="22" cy="22" r="22" fill="url(#logoGradF)"/>
-        <path fill="#fff" transform="translate(12,9) scale(0.85)" d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>
-      </svg>
-      צבע <span>ביתך</span>
+      <picture>
+        <source srcset="/images/logo-footer.webp" type="image/webp">
+        <img class="logo-img" src="/images/logo-footer.png" alt="צבע ביתך" width="369" height="216" loading="lazy">
+      </picture>
     </div>
     <p>צביעת דירות, בתים ומשרדים/עסקים באזור המרכז</p>
     <p>📞 <a href="tel:0537479378" onclick="return gtag_report_conversion('tel:0537479378');">053-747-9378</a> | 📍 אזור המרכז</p>

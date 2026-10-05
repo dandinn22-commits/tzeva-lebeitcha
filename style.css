@@ -681,3 +681,13 @@ body.access-underline-links a { text-decoration: underline !important; }
 .notfound h1 { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 12px; }
 .notfound p { color: #555; margin-bottom: 26px; }
 .notfound .hero-ctas { margin-bottom: 30px; }
+
+/* ===== לוגו חדש ===== */
+.logo { text-decoration: none; line-height: 0; }
+.logo picture { display: block; }
+.logo-img { display: block; height: 72px; width: auto; }
+.site-footer .logo-img { height: 80px; margin: 0 auto; }
+@media (max-width: 768px) {
+  .site-header .logo-img { height: 54px; }
+  .header-inner { padding: 10px 16px; }
+}
