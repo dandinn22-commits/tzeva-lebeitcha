@@ -138,8 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // גיבוי לידים ולחיצות לגיליון "צבע ביתך – מעקב לידים" (אם הכתובת ריקה – לא בשימוש)
-  const SHEET_URL = '';
+  // גיבוי לידים ולחיצות לגיליון "לידים - צבע ביתך" בגוגל דרייב
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxFOfF0YVLovwgt8sy-x6qWx4CXk-h529VCkbje24gpBGHlcTVSvWq5N4Bhsep74Bnm/exec';
   const sendToSheet = (payload) => {
     if (!SHEET_URL) return;
     try {
