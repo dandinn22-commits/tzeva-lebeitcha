@@ -212,6 +212,8 @@ document.addEventListener('DOMContentLoaded', () => {
           let moved = false;
           const goThanks = () => { if (!moved) { moved = true; window.location.href = '/thank-you.html'; } };
           if (typeof gtag === 'function') {
+            // המרה בגוגל אדס: שליחת טופס
+            gtag('event', 'conversion', { send_to: 'AW-18467289737/e-6ECLXx4JQdEIn18eVE' });
             gtag('event', 'generate_lead', {
               form_location: form.classList.contains('quick-form') ? 'quick_form' : 'contact_form',
               area: data.area || '',
@@ -249,7 +251,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof gtag !== 'function') return;
     const where = link.closest('header, .hero, .contact, .city-cta, .floating-buttons, footer, .notfound');
     const params = { link_location: where ? (where.className.split(' ')[0] || where.tagName.toLowerCase()) : 'other', page_path: location.pathname };
-    if (href.includes('wa.me')) gtag('event', 'whatsapp_click', params);
+    if (href.includes('wa.me')) {
+      gtag('event', 'whatsapp_click', params);
+      // המרה בגוגל אדס: לחיצה על וואטסאפ
+      gtag('event', 'conversion', { send_to: 'AW-18467289737/sLg8CK3m4JQdEIn18eVE' });
+    }
     else if (href.startsWith('tel:')) gtag('event', 'phone_click', params);
   });
 });
