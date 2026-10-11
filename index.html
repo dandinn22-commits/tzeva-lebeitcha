@@ -50,7 +50,7 @@ function gtag_report_conversion(url) {
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=20261006">
+<link rel="stylesheet" href="style.css?v=20261012">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -139,7 +139,15 @@ function gtag_report_conversion(url) {
       "name": "כמה עולה צביעת דירה, בית או משרד?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "המחיר תלוי בגודל השטח, מצב הקירות וסוג הצבע. נשמח לתת הצעת מחיר מדויקת בחינם אחרי שנשמע פרטים."
+        "text": "המחיר תלוי בגודל השטח, מצב הקירות וסוג הצבע. נשמח לתת הצעת מחיר מדויקת בחינם אחרי שנשמע פרטים. המחיר שסיכמנו הוא המחיר שתשלמו, ומשלמים רק בסוף העבודה."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "מתי משלמים?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "רק בסוף העבודה. אין מקדמה. אחרי שסיימנו, ניקינו ועברנו איתכם על התוצאה, משלמים."
       }
     },
     {
@@ -163,7 +171,7 @@ function gtag_report_conversion(url) {
       "name": "איזה סוג צבע אתם משתמשים?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "אנחנו עובדים רק עם חומרי צבע איכותיים שמעניקים גימור חלק ועמיד לאורך זמן."
+        "text": "אנחנו עובדים עם צבעי טמבור, שמתאימים לאקלים בישראל ומעניקים גימור חלק ועמיד לאורך זמן. לחדרי רחצה ומטבחים משתמשים בצבע מתאים לחדרים לחים."
       }
     }
   ]
@@ -186,6 +194,7 @@ function gtag_report_conversion(url) {
       <a href="#gallery">לפני ואחרי</a>
       <a href="#reviews">לקוחות ממליצים</a>
       <a href="#faq">שאלות נפוצות</a>
+      <a href="/guides/">מדריכים</a>
       <a href="#contact">צור קשר</a>
     </nav>
     <a href="tel:0537479378" onclick="return gtag_report_conversion('tel:0537479378');" class="btn btn-header-call">📞 053-747-9378</a>
@@ -198,7 +207,7 @@ function gtag_report_conversion(url) {
   <div class="container hero-inner">
     <h1>צביעת דירות ובתים <span class="highlight">באזור המרכז</span></h1>
     <p class="hero-slogan">הבית שלכם ראוי לצבע חדש</p>
-    <p class="hero-sub">12 שנות ניסיון בצביעת דירות, בתים ומשרדים/עסקים באזור המרכז - הצעת מחיר עד שעה, עבודה נקייה ומסודרת, ואחריות מלאה על כל עבודה.</p>
+    <p class="hero-sub">12 שנות ניסיון בצביעת דירות, בתים ומשרדים/עסקים באזור המרכז - הצעת מחיר עד שעה, צבעי טמבור איכותיים, ומשלמים רק בסוף העבודה.</p>
     <div class="hero-ctas">
       <a href="https://wa.me/972537479378?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%91%D7%99%D7%A2%D7%94" target="_blank" rel="noopener" class="btn btn-whatsapp">💬 שלחו הודעת וואטסאפ</a>
       <a href="tel:0537479378" onclick="return gtag_report_conversion('tel:0537479378');" class="btn btn-call">📞 התקשרו עכשיו: 053-747-9378</a>
@@ -207,8 +216,10 @@ function gtag_report_conversion(url) {
     <div class="hero-badges">
       <span>🏆 12 שנות ניסיון</span>
       <span>⚡ הצעת מחיר עד שעה</span>
+      <span>💳 משלמים רק בסוף העבודה</span>
+      <span>🎨 צבעי טמבור</span>
+      <span>🤝 מחיר משתלם בהתחייבות</span>
       <span>🛡️ אחריות מלאה על העבודה</span>
-      <span>✨ עבודה נקייה ומסודרת</span>
     </div>
   </div>
 </section>
@@ -295,11 +306,11 @@ function gtag_report_conversion(url) {
     <p>צבע ביתך מתמחה בצביעת דירות, בתים פרטיים ומשרדים כבר 12 שנים. אנחנו עובדים בתל אביב, רמת גן, גבעתיים, בני ברק, חולון, בת ים, ראשון לציון, פתח תקווה, הרצליה, רעננה, כפר סבא ושאר ערי המרכז, ומגיעים בדרך כלל כבר למחרת אישור ההצעה.</p>
     <h3>איך מתנהלת צביעת דירה אצלנו?</h3>
     <ol>
-      <li><strong>הצעת מחיר עד שעה</strong> – שולחים תמונות או פרטים בוואטסאפ ומקבלים מחיר ברור, בלי הפתעות.</li>
+      <li><strong>הצעת מחיר עד שעה</strong> – שולחים תמונות או פרטים בוואטסאפ ומקבלים מחיר ברור. המחיר שסיכמנו הוא המחיר שתשלמו.</li>
       <li><strong>הכנת הבית</strong> – מכסים רהיטים, רצפות ושקעים, כך שאין צורך לפנות את הדירה.</li>
       <li><strong>הכנת הקירות</strong> – סתימת סדקים וחורים, שפכטל, ליטוש וטיפול בכתמי רטיבות ועובש.</li>
-      <li><strong>צביעה</strong> – שכבת יסוד לפי הצורך ושתי שכבות צבע איכותי לגימור אחיד ועמיד.</li>
-      <li><strong>ניקיון ומסירה</strong> – מפנים הכול, מנקים, ועוברים איתכם על התוצאה.</li>
+      <li><strong>צביעה</strong> – שכבת יסוד לפי הצורך ושתי שכבות צבע טמבור לגימור אחיד ועמיד.</li>
+      <li><strong>ניקיון, מסירה ותשלום</strong> – מפנים הכול, מנקים ועוברים איתכם על התוצאה. רק כשאתם מרוצים, משלמים.</li>
     </ol>
     <h3>מה אנחנו עושים</h3>
     <p>צביעת דירה מלאה או חדר בודד, צביעה לפני כניסה לדירה חדשה או לפני מסירה בסיום שכירות, צביעת בתים פרטיים מבפנים ומבחוץ, צביעת משרדים, חנויות ובתי עסק גם מחוץ לשעות הפעילות, וכן תיקון נזקי רטיבות, קילופים וסדקים לפני הצביעה.</p>
@@ -325,16 +336,29 @@ function gtag_report_conversion(url) {
     </div>
   </div>
 </section>
+<!-- ===== מדריכים ===== -->
+<section class="guides-list" id="guides">
+  <div class="container">
+    <h2 style="text-align:center;margin-bottom:24px">מדריכים לפני שצובעים</h2>
+    <div class="guide-grid">
+      <a class="guide-card" href="/guides/how-much-does-painting-cost/"><h3>כמה עולה צביעת דירה?</h3><p>מה משפיע על המחיר ומה חייב להיות בהצעת מחיר טובה.</p><span class="guide-more">לקריאה ←</span></a>
+      <a class="guide-card" href="/guides/end-of-lease-painting/"><h3>צביעה לפני סוף שכירות</h3><p>מתי לתאם, מה בעל הדירה בודק ואיך עושים את זה בלי לחץ.</p><span class="guide-more">לקריאה ←</span></a>
+      <a class="guide-card" href="/guides/mold-and-damp/"><h3>עובש ורטיבות בקירות</h3><p>מה עושים לפני שצובעים כדי שהכתם לא יחזור.</p><span class="guide-more">לקריאה ←</span></a>
+    </div>
+    <p style="text-align:center;margin-top:20px"><a href="/guides/" class="btn btn-outline">לכל המדריכים</a></p>
+  </div>
+</section>
 <!-- ===== יתרונות ===== -->
 <section class="advantages">
   <div class="container">
     <h2>למה לבחור בצבע ביתך?</h2>
     <div class="adv-grid">
-      <div class="adv-item"><span class="adv-emoji">💰</span><h3>מחירים הוגנים</h3><p>תמחור שקוף והוגן, ללא הפתעות בסוף העבודה.</p></div>
+      <div class="adv-item"><span class="adv-emoji">🤝</span><h3>מחיר משתלם בהתחייבות</h3><p>הצעת המחיר שסיכמנו היא המחיר הסופי. בלי תוספות ובלי הפתעות.</p></div>
+      <div class="adv-item"><span class="adv-emoji">💳</span><h3>משלמים רק בסוף העבודה</h3><p>בלי מקדמה. משלמים רק אחרי שהעבודה הסתיימה ואתם מרוצים מהתוצאה.</p></div>
       <div class="adv-item"><span class="adv-emoji">⚡</span><h3>הצעת מחיר מהירה</h3><p>מקבלים הצעת מחיר מדויקת תוך זמן קצר, ללא המתנה מיותרת.</p></div>
       <div class="adv-item"><span class="adv-emoji">📅</span><h3>עבודה מהיום למחר</h3><p>זמינות גבוהה - במקרים רבים מתחילים לעבוד כבר למחרת הפנייה.</p></div>
       <div class="adv-item"><span class="adv-emoji">🎯</span><h3>צוות מקצועי ומנוסה</h3><p>צבעים מיומנים עם שנות ניסיון, שמקפידים על כל פרט.</p></div>
-      <div class="adv-item"><span class="adv-emoji">🧴</span><h3>חומרים איכותיים</h3><p>עובדים רק עם צבעים איכותיים שנותנים גימור חלק ועמיד לאורך זמן.</p></div>
+      <div class="adv-item"><span class="adv-emoji">🎨</span><h3>צבעי טמבור</h3><p>עובדים עם צבעי טמבור, שמתאימים לאקלים בישראל ונותנים גימור חלק ועמיד לאורך זמן.</p></div>
       <div class="adv-item"><span class="adv-emoji">🛡️</span><h3>אחריות על העבודה</h3><p>עומדים מאחורי כל עבודה שאנחנו מבצעים, בשקט נפשי מלא.</p></div>
       <div class="adv-item"><span class="adv-emoji">🏆</span><h3>12 שנות ניסיון</h3><p>עשור ומעלה של ניסיון בצביעת בתים ודירות באזור המרכז.</p></div>
       <div class="adv-item"><span class="adv-emoji">✨</span><h3>עבודה נקייה ומסודרת</h3><p>מכסים רהיטים ורצפות ומנקים בסיום - הבית נשאר נקי כאילו לא עבדנו בו.</p></div>
@@ -415,7 +439,11 @@ function gtag_report_conversion(url) {
       </details>
       <details class="faq-item">
         <summary>כמה עולה צביעת דירה, בית או משרד?</summary>
-        <p>המחיר תלוי בגודל השטח, מצב הקירות וסוג הצבע. נשמח לתת הצעת מחיר מדויקת בחינם אחרי שנשמע פרטים.</p>
+        <p>המחיר תלוי בגודל השטח, מצב הקירות וסוג הצבע. נשמח לתת הצעת מחיר מדויקת בחינם אחרי שנשמע פרטים. המחיר שסיכמנו הוא המחיר שתשלמו, ומשלמים רק בסוף העבודה.</p>
+      </details>
+      <details class="faq-item">
+        <summary>מתי משלמים?</summary>
+        <p>רק בסוף העבודה. אין מקדמה. אחרי שסיימנו, ניקינו ועברנו איתכם על התוצאה, משלמים.</p>
       </details>
       <details class="faq-item">
         <summary>באילו אזורים אתם עובדים?</summary>
@@ -427,7 +455,7 @@ function gtag_report_conversion(url) {
       </details>
       <details class="faq-item">
         <summary>איזה סוג צבע אתם משתמשים?</summary>
-        <p>אנחנו עובדים רק עם חומרי צבע איכותיים שמעניקים גימור חלק ועמיד לאורך זמן.</p>
+        <p>אנחנו עובדים עם צבעי טמבור, שמתאימים לאקלים בישראל ומעניקים גימור חלק ועמיד לאורך זמן. לחדרי רחצה ומטבחים משתמשים בצבע מתאים לחדרים לחים.</p>
       </details>
     </div>
   </div>
@@ -438,7 +466,7 @@ function gtag_report_conversion(url) {
   <div class="container contact-inner">
     <div class="contact-info">
       <h2>מקבלים הצעת מחיר?</h2>
-      <p>השאירו פרטים ונחזור אליכם בהקדם, או צרו קשר ישירות:</p>
+      <p>שם וטלפון מספיקים - נחזור אליכם עם הצעת מחיר, בדרך כלל תוך שעה. או צרו קשר ישירות:</p>
       <a href="tel:0537479378" onclick="return gtag_report_conversion('tel:0537479378');" class="btn btn-call btn-block">📞 053-747-9378</a>
       <a href="https://wa.me/972537479378?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%A6%D7%91%D7%99%D7%A2%D7%94" target="_blank" rel="noopener" class="btn btn-whatsapp btn-block">💬 שלחו הודעה בוואטסאפ</a>
       <p class="area-note">📍 עובדים באזור המרכז בלבד</p>
@@ -454,7 +482,7 @@ function gtag_report_conversion(url) {
         <input type="tel" name="phone" required placeholder="050-0000000">
       </label>
       <label>
-        אזור מגורים
+        אזור מגורים (לא חובה)
         <select name="area">
           <option value="">בחרו אזור</option>
           <option>תל אביב</option>
@@ -494,7 +522,7 @@ function gtag_report_conversion(url) {
     <p>צביעת דירות, בתים ומשרדים/עסקים באזור המרכז</p>
     <p>📞 <a href="tel:0537479378" onclick="return gtag_report_conversion('tel:0537479378');">053-747-9378</a> | 📍 אזור המרכז</p>
     <p>🕒 א'-ה' 8:00-20:00 | ו' 8:00-14:00</p>
-    <p><a href="accessibility.html">הצהרת נגישות</a></p>
+    <p><a href="/guides/">מדריכים לצביעת דירה</a> | <a href="accessibility.html">הצהרת נגישות</a></p>
     <p class="footer-copy">© <span id="year">2026</span> צבע ביתך. כל הזכויות שמורות.</p>
   </div>
 </footer>
