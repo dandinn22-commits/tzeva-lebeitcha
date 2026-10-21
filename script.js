@@ -170,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         area: getField('area'),
         message: getField('message'),
         _subject: 'ליד חדש מהאתר - צבע ביתך',
+        _cc: 'dandinn22@gmail.com',
         _template: 'table',
         _captcha: 'false',
       };
