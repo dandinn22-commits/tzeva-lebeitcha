@@ -213,6 +213,15 @@ document.addEventListener('DOMContentLoaded', () => {
           let moved = false;
           const goThanks = () => { if (!moved) { moved = true; window.location.href = '/thank-you.html'; } };
           if (typeof gtag === 'function') {
+            // המרות משופרות בגוגל אדס: מעבירים את הטלפון של הטופס הזה (בפורמט בינלאומי) לפני דיווח ההמרה
+            let phoneDigits = (data.phone || '').replace(/\D/g, '');
+            if (phoneDigits.startsWith('0')) phoneDigits = '972' + phoneDigits.slice(1); // 0501234567 → 972501234567
+            const emailField = form.querySelector('input[name="email"]');
+            const userData = {};
+            if (phoneDigits.length >= 11) userData.phone_number = '+' + phoneDigits;
+            if (emailField && emailField.value.trim()) userData.email = emailField.value.trim().toLowerCase();
+            if (Object.keys(userData).length) gtag('set', 'user_data', userData);
+
             // המרה בגוגל אדס: שליחת טופס
             gtag('event', 'conversion', { send_to: 'AW-18467289737/e-6ECLXx4JQdEIn18eVE' });
             gtag('event', 'generate_lead', {
