@@ -697,6 +697,9 @@ body.access-underline-links a { text-decoration: underline !important; }
 .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
 .guide-card { display: flex; flex-direction: column; gap: 10px; background: var(--light); border-radius: 16px; padding: 24px; text-decoration: none; color: var(--dark); box-shadow: 0 4px 18px rgba(0,0,0,0.06); transition: transform .2s, box-shadow .2s; }
 .guide-card:hover { transform: translateY(-3px); box-shadow: 0 8px 26px rgba(0,0,0,0.10); }
+.guide-card { overflow: hidden; }
+.guide-img { display: block; width: calc(100% + 48px); max-width: none; height: auto; aspect-ratio: 3 / 2; object-fit: cover; margin: -24px -24px 6px; background: #eee; transition: transform .3s; }
+.guide-card:hover .guide-img { transform: scale(1.03); }
 .guide-card h3 { font-size: 1.15rem; line-height: 1.4; }
 .guide-card p { color: #555; line-height: 1.7; flex: 1; }
 .guide-more { color: var(--orange); font-weight: 700; }
