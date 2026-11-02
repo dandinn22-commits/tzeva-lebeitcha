@@ -164,12 +164,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return field ? field.value : '';
       };
 
+      // טופס בעמוד שירות מסומן ב-data-service, כדי שיהיה ברור מהליד על מה פנו
+      const service = form.dataset.service || '';
+      const userMessage = getField('message');
+
       const data = {
         name: getField('name'),
         phone: getField('phone'),
         area: getField('area'),
-        message: getField('message'),
-        _subject: 'ליד חדש מהאתר - צבע ביתך',
+        message: service ? (userMessage ? `${service}: ${userMessage}` : service) : userMessage,
+        _subject: service ? `ליד חדש מהאתר - ${service}` : 'ליד חדש מהאתר - צבע ביתך',
         _cc: 'dandinn22@gmail.com',
         _template: 'table',
         _captcha: 'false',
