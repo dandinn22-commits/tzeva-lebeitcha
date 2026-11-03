@@ -1,5 +1,17 @@
 // צבע ביתך - סקריפט צד לקוח: תפריט נייד + שליחת טופס יצירת קשר
 
+// מדידת שיחות אמיתיות מהאתר: גוגל מחליף את המספר המוצג למבקרים שהגיעו ממודעה (שיחות 60 שניות ומעלה נספרות כהמרה)
+if (typeof gtag === 'function') {
+  gtag('config', 'AW-18467289737/sGh1CMvCxrEdEIn18eVE', { phone_conversion_number: '053-747-9378' });
+}
+
+// בדיקת טלפון ישראלי תקין: נייד (05X) / קווי (02,03,04,08,09) / 07X, גם בפורמט 972+
+const isValidIsraeliPhone = (value) => {
+  let digits = String(value || '').replace(/\D/g, '');
+  if (digits.startsWith('972')) digits = '0' + digits.slice(3);
+  return /^0(?:5\d{8}|7\d{8}|[23489]\d{7})$/.test(digits);
+};
+
 document.addEventListener('DOMContentLoaded', () => {
   // תפריט נייד
   const navToggle = document.getElementById('navToggle');
@@ -167,6 +179,14 @@ document.addEventListener('DOMContentLoaded', () => {
       // טופס בעמוד שירות מסומן ב-data-service, כדי שיהיה ברור מהליד על מה פנו
       const service = form.dataset.service || '';
       const userMessage = getField('message');
+
+      if (!isValidIsraeliPhone(getField('phone'))) {
+        if (status) {
+          status.textContent = 'מספר הטלפון לא תקין. נא להזין מספר מלא, לדוגמה 050-1234567';
+          status.className = 'form-status error';
+        }
+        return;
+      }
 
       const data = {
         name: getField('name'),
